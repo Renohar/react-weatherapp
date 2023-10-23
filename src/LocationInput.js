@@ -1,21 +1,31 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
+import Current from "./components/Current";
+import Forecast from "./components/Forecast";
 
 const LocationInput = () => {
 
     const APIurl = 'https://api.weatherapi.com/v1/search.json?key=6f5329be725440e6ae6172224232210&q=';
-    const weatherURL = (City) => `https://api.weatherapi.com/v1/forecast.json?key=6f5329be725440e6ae6172224232210&q=${City}&days=7&aqi=no&alerts=no`;
+    const weatherURL = (City) => `https://api.weatherapi.com/v1/forecast.json?key=6f5329be725440e6ae6172224232210&q=${City}&days=3&aqi=no&alerts=no`;
+
     const [Location,SetLocation] = useState('');
     const [Clicked,SetClicked] = useState(false);
     const [City, SetCity] = useState([]);
 
+    const [current,SetCurrent] = useState('');
+    const [forecast,SetForecast] = useState('');
+    const [Locationtitle, SetLocationtitle] = useState('')
+
     const handleClick =  async (clickedcity) => {
         SetLocation(clickedcity);
-        const dataurl = await fetch (weatherURL(City));
-        const weatherdata = await dataurl.json();
-        console.log(weatherdata);
         SetClicked(true);
-    }
+        const weatherdataurl = await fetch (weatherURL(Location));
+        const weatherdata = await weatherdataurl.json();
+        SetCurrent(weatherdata.current);
+        SetForecast(weatherdata.forecast);
+        SetLocationtitle(weatherdata.location.name)
+        console.log(weatherdata)
+    };
 
     useEffect(
         () => {
@@ -57,6 +67,8 @@ const LocationInput = () => {
                     <div onClick= {() => handleClick(city)}> {city}</div>
                 )
             )}
+            {current && <Current current = {current} City = {Locationtitle} /> }
+            {forecast && <Forecast forecast = {forecast} City = {Locationtitle} /> }
         </div>
     )
 }
