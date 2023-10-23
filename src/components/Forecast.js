@@ -37,7 +37,7 @@ const Forecast = ({forecast : {forecastday},City}) => {
                             aria-controls="panel1bh-content"
                             id={date}
                             >
-                            <img src={icon}/>
+                            <img src={icon} alt={text}/>
                             <Typography sx={{ width: '33%', flexShrink: 0 }}>
                             {date}({text})
                             </Typography>
@@ -62,7 +62,7 @@ const Forecast = ({forecast : {forecastday},City}) => {
                                                 <div>
                                                     <div>
                                                     <b>{index}:00</b>
-                                                    <img src={curdatehour.condition.icon}/>
+                                                    <img src={curdatehour.condition.icon} alt={curdatehour.temp_c}/>
                                                     </div>
                                                     <div>
                                                     <LinearProgress variant="determinate" value={(curdatehour.temp_c*100)/maxtemp_c} />
