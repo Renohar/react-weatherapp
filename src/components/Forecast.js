@@ -20,8 +20,9 @@ const Forecast = ({forecast : {forecastday},City}) => {
 
 
     return (
-        <div>
-            <h3>Forecast for {City} </h3>
+        <div className="forecast">
+            <div className="h3"><h3>Forecast for {City} </h3></div>
+            
             
             {forecastday.map(
                 (curdate) => {
@@ -37,8 +38,9 @@ const Forecast = ({forecast : {forecastday},City}) => {
                             aria-controls="panel1bh-content"
                             id={date}
                             >
-                            <img src={icon} alt={text}/>
+                            
                             <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                            <img src={icon} alt={text}/>
                             {date}({text})
                             </Typography>
 
@@ -47,7 +49,7 @@ const Forecast = ({forecast : {forecastday},City}) => {
                             </Typography>
 
                             <Typography sx={{ width: '33%', flexShrink: 0 }}>
-                            <b>{daily_chance_of_rain}%</b> of rain possible 
+                            <b>{daily_chance_of_rain}%</b>  of rain possible 
                             </Typography>
 
                           
@@ -59,12 +61,12 @@ const Forecast = ({forecast : {forecastday},City}) => {
                                     hour.map(
                                         (curdatehour,index) => {
                                             return(
-                                                <div>
-                                                    <div>
+                                                <div className="hourforecast">
+                                                    <div className="hourforecasttext">
                                                     <b>{index}:00</b>
                                                     <img src={curdatehour.condition.icon} alt={curdatehour.temp_c}/>
                                                     </div>
-                                                    <div>
+                                                    <div className="hourforecastprogress">
                                                     <LinearProgress variant="determinate" value={(curdatehour.temp_c*100)/maxtemp_c} />
                                                     {curdatehour.temp_c} deg
                                                     </div>

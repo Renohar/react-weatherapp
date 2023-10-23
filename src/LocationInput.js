@@ -55,16 +55,16 @@ const LocationInput = () => {
     );
 
     return (
-        <div>
+        <div className="LocationInput">
             <input
             type = "text"
-            placeholder = "Enter the City Name"
+            placeholder = "Enter City Name"
             value = {Location}
             onChange = { (e) => SetLocation(e.target.value) }
             />
             {City.map(
                 (city) => (
-                    <div onClick= {() => handleClick(city)}> {city}</div>
+                    <div className="LocationInputSuggest" onClick= {() => handleClick(city)}> {city}</div>
                 )
             )}
             {current && <Current current = {current} City = {Locationtitle} /> }

@@ -4,7 +4,7 @@ import LocationInput from "./LocationInput";
 
 function App() {
   return (
-    <div >
+    <div className="Appclass" >
       <Header/>
       <LocationInput/>
     </div>

@@ -1,0 +1,123 @@
+body{
+    background: #efefef;
+}
+
+h1{
+    font-size: 40px;
+}
+
+h3{
+    color: orange;
+    padding: 10px 0;
+    background: #fff;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.Appclass{
+    text-align: center;
+}
+
+.Appclass input{
+    border-radius: 10px;
+    width: 50%;
+    height: 30px;
+    border: 1px solid #efefef;
+    color: #000;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    
+}
+
+
+.Appclass input:focus-visible{
+    outline : #b7b5b5;
+}
+
+.LocationInput .LocationInputSuggest{
+    
+    background: #d7d7d7;
+    color: #000;
+    font-size: 18px;
+    width: 50%;
+    margin: 5px auto;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.currentweather div{
+    padding: 10px 0;
+}
+
+.currentweather .weather-class{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forecast .h3{
+    padding-bottom: 10px;
+}
+
+.forecast .MuiPaper-root {
+    width: 70%;
+    margin: 5px auto !important;
+    border-radius: 10px;
+}
+
+.forecast .MuiPaper-root::before{
+    display: none;
+}
+
+.forecast .MuiPaper-root p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forecast .MuiPaper-root .MuiCollapse-root .hourforecast{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.hourforecasttext{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hourforecastprogress{
+    width: 75%;
+}
+
+@media (max-width: 576px){
+    .Appclass input{
+        width: 100%;
+        padding: 10px 0;
+    }
+    .LocationInput .LocationInputSuggest{
+        width: 100%;
+        padding: 10px 0;
+    }
+    h3{
+        width: 100%;
+    }
+    .forecast .MuiPaper-root{
+        width: 100%;
+    }
+    .forecast .MuiPaper-root p{
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    .forecast .MuiPaper-root .MuiAccordionSummary-content{
+        flex-wrap: wrap;
+    }
+}
