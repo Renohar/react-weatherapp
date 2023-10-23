@@ -8,7 +8,7 @@ const Current = ({current,City}) => {
 
             <h3>Current</h3>
             <div className="weather-class">
-                <img src = {current.condition.icon}/>
+                <img src = {current.condition.icon} alt={current.condition.text}/>
                 <span>{current.condition.text}</span>
             </div>
             <div className="Temperature-class">
